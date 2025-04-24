@@ -1,0 +1,128 @@
+/*fontes importadas */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+
+body {
+    font-family: sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Share Tech Mono', monospace;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container {
+    overflow-x: auto;
+}
+
+.semanas {
+    display: flex;
+    gap: 20px;
+    min-width: max-content;
+}
+
+/*título da semana */
+.semana {
+    font-family: 'Share Tech Mono', monospace;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    min-width: 250px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.data {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.add-tarefa {
+    margin-bottom: 15px;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lista-tarefas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tarefa {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 5px;
+}
+
+.descricao {
+    flex: 1;
+    font-size: 14px;
+}
+
+.status {
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+}
+
+.para-fazer {
+    background-color: #007bff;
+    /* azul */
+}
+
+.em-andamento {
+    background-color: #ffc107;
+    /* amarelo */
+}
+
+.concluido {
+    background-color: #28a745;
+    /* verde */
+}
+
+.editar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Estilos para a legenda */
+.legenda {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.legenda p {
+    margin: 5px 0;
+}
+
+.legenda .status {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border-radius: 4px;
+}
