@@ -17,9 +17,9 @@ body {
 body {
     background-image: url('https://github.com/gicarolinedev/cronogramaestudos/blob/main/assets/images/cronogramabackground.jpeg?raw=true');
     background-size: cover;
-    width: 100%; /* Preenche toda a tela */
-    background-position: center; /* Centraliza */
-    background-repeat: no-repeat; /* Evita repetição */
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 
@@ -27,7 +27,8 @@ body {
 h1 {
     font-family: 'Luckiest Guy', cursive;
     color: rgb(255, 255, 255);
-    text-shadow: 0 0 5px #f375f3; /* Borda neon simples */
+    text-shadow: 0 0 5px #f375f3;
+    /* Borda neon simples */
     text-align: center;
     margin-bottom: 5px;
     margin-top: 10px;
@@ -37,7 +38,8 @@ h1 {
 .subtitulo {
     font-family: 'Share Tech Mono', monospace;
     color: #ffffff;
-    text-shadow: 0 0 5px #f375f3;  /* Borda neon simples */
+    text-shadow: 0 0 5px #f375f3;
+    /* Borda neon simples */
     text-align: center;
     margin-bottom: 30px;
 }
@@ -46,26 +48,35 @@ h1 {
     width: 100%;
     padding: 10px;
     display: flex;
-    justify-content: center;  /* Centraliza o conteúdo horizontalmente */
+    justify-content: center;
+    /* Centraliza o conteúdo horizontalmente */
 }
 
 /*coluna das semanas */
 .semanas {
-    display: grid; /*transforma um contêiner em uma grade*/
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Colunas flexíveis */
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 colunas */
+    grid-template-rows: auto;
+    /* Ajusta automaticamente a altura das linhas */
+    gap: 30px;
+    /* Distância entre os itens */
     width: 100%;
-    min-width: 250px;
-    max-width: 1000px;
-    margin-top: -10px; /* Ajuste para a largura desejada */
-    align-items: stretch; /* força todos os filhos a ocuparem mesma altura */
+    min-width: 300px;
+    max-width: 90%;
+    /* Limita o tamanho do grid */
+    margin-top: -10px;
+    align-items: stretch;
+    justify-items: stretch;
+    /* Garante que os itens ocupem toda a célula */
 }
 
 .semana {
     background: rgba(0, 0, 0, 0.7);
-    padding: 15px;
+    padding: 10px;
     min-width: 0px;
-    min-height: 220px; /* força altura mínima igual */
+    min-height: 0px;
+    /* força altura mínima igual */
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -91,7 +102,8 @@ h2 {
 .add-tarefa {
     font-family: 'Share Tech Mono', monospace;
     margin-bottom: 15px;
-    background: linear-gradient(to right, #700174, #7e027e); /* gradiente roxo fundo botão*/
+    background: linear-gradient(to right, #700174, #7e027e);
+    /* gradiente roxo fundo botão*/
     color: white;
     padding: 5px 10px;
     border: none;
@@ -103,7 +115,7 @@ h2 {
 .alterar-data {
     font-family: 'Share Tech Mono', monospace;
     margin-bottom: 10px;
-    background: rgb(55, 255, 29);
+    background: rgb(168, 169, 168);
     color: black;
     padding: 5px 10px;
     border: none;
@@ -140,11 +152,13 @@ h2 {
 }
 
 .para-fazer {
-    background-color: #007bff; /* azul */
+    background-color: #007bff;
+    /* azul */
 }
 
 .em-andamento {
-    background-color: #ffc107; /* amarelo */
+    background-color: #ffc107;
+    /* amarelo */
 }
 
 .concluido {
@@ -177,6 +191,7 @@ h2 {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     font-size: 14px;
     z-index: 9999;
+    /* Aumente o z-index para garantir que ela esteja no topo */
 }
 
 
