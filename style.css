@@ -1,53 +1,107 @@
 /*fontes importadas */
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Share+Tech+Mono&display=swap');
 
 
 body {
-    font-family: sans-serif;
-    background: #f4f4f4;
-    padding: 20px;
+    background-image: url('https://github.com/gicarolinedev/cronogramaestudos/blob/main/assets/images/cronogramabackground.jpeg?raw=true');
+    background-size: cover;
+    width: 100%;
+    /* Preenche toda a tela */
+    background-position: center;
+    /* Centraliza */
+    background-repeat: no-repeat;
+    /* Evita repetição */
 }
 
+
+/*título*/
 h1 {
+    font-family: 'Luckiest Guy', cursive;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 5px #f375f3;
+    /* Borda neon simples */
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+/*subtítulo */
+.subtitulo {
     font-family: 'Share Tech Mono', monospace;
+    color: #ffffff;
+    text-shadow: 0 0 5px #f375f3;
+    /* Borda neon simples */
     text-align: center;
     margin-bottom: 30px;
 }
 
+/*frase final */
+.free {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
 .container {
-    overflow-x: auto;
+    width: 100%;
+    padding: 20px;
 }
 
+/*coluna das semanas */
 .semanas {
-    display: flex;
+    display: grid;
+    /*transforma um contêiner em uma grade*/
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    /* Colunas flexíveis */
     gap: 20px;
-    min-width: max-content;
+    width: 100%;
+    min-width: 250px;
+    max-width: 1200px;
+    /* Ajuste para a largura desejada */
 }
 
-/*título da semana */
 .semana {
-    font-family: 'Share Tech Mono', monospace;
-    background: white;
-    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    /* Cor de fundo preta com 40% de opacidade */
     padding: 15px;
     min-width: 250px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
+/* título da semana */
 h2 {
+    font-family: 'Share Tech Mono', monospace;
+    color: white;
     margin-top: 0;
 }
 
+/*data */
 .data {
-    font-size: 14px;
-    color: #555;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 20px;
+    color: #8b8b8b;
     margin-bottom: 10px;
 }
 
+/*botão de adicionar tarefa */
 .add-tarefa {
+    font-family: 'Share Tech Mono', monospace;
     margin-bottom: 15px;
-    background-color: #007bff;
+    background: linear-gradient(to right, #700174, #7e027e);
+    /* gradiente roxo fundo botão*/
     color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*botão de alterar data */
+.alterar-data {
+    font-family: 'Share Tech Mono', monospace;
+    margin-bottom: 15px;
+    background: wheat;
+    color: black;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
@@ -70,6 +124,8 @@ h2 {
 }
 
 .descricao {
+    font-family: 'Share Tech Mono', monospace;
+    color: white;
     flex: 1;
     font-size: 14px;
 }
@@ -92,22 +148,16 @@ h2 {
 
 .concluido {
     background-color: #28a745;
-    /* verde */
+
 }
 
-.editar {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Estilos para a legenda */
+/* legenda/status da tarefa */
 .legenda {
+    background: linear-gradient(to right, #700174, #381838);
+    margin-top: 5px;
     position: fixed;
-    bottom: 20px;
+    top: 20px;
     right: 20px;
-    background-color: #fff;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -115,7 +165,10 @@ h2 {
     z-index: 1000;
 }
 
+
 .legenda p {
+    font-family: 'Share Tech Mono', monospace;
+    color: white;
     margin: 5px 0;
 }
 
