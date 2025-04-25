@@ -140,13 +140,11 @@ h2 {
 }
 
 .para-fazer {
-    background-color: #007bff;
-    /* azul */
+    background-color: #007bff; /* azul */
 }
 
 .em-andamento {
-    background-color: #ffc107;
-    /* amarelo */
+    background-color: #ffc107; /* amarelo */
 }
 
 .concluido {
