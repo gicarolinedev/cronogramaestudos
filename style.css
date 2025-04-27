@@ -1,79 +1,167 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
-    // Função para adicionar tarefa
-    const botoesAdicionar = document.querySelectorAll('.add-tarefa');
-    botoesAdicionar.forEach(botao => {
-        botao.addEventListener('click', function () {
-            const semana = botao.closest('.semana');
-            const inputTarefa = semana.querySelector('.input-tarefa');
-            inputTarefa.style.display = 'block';  // Exibe o campo para adicionar tarefa
-        });
-    });
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    // Função para salvar tarefa
-    const botoesSalvar = document.querySelectorAll('.salvar-tarefa');
-    botoesSalvar.forEach(botao => {
-        botao.addEventListener('click', function () {
-            const semana = botao.closest('.semana');
-            const inputCampo = semana.querySelector('.campo-tarefa');
-            const tarefaTexto = inputCampo.value.trim(); // Remove espaços extras
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f1f1f1;
+    font-family: 'Roboto Mono', monospace;
+}
 
-            if (tarefaTexto) {
-                const listaTarefas = semana.querySelector('.lista-tarefas');
-                const novaTarefa = document.createElement('li');
-                novaTarefa.textContent = tarefaTexto;
+/* Título principal */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #000000;
+}
 
-                // Adiciona botão de Editar
-                const botaoEditar = document.createElement('button');
-                botaoEditar.textContent = 'Editar';
-                botaoEditar.classList.add('editar-tarefa');
-                novaTarefa.appendChild(botaoEditar);
+/* Container */
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
 
-                // Adiciona botão de Alterar Status
-                const botaoStatus = document.createElement('button');
-                botaoStatus.textContent = 'Alterar Status';
-                botaoStatus.classList.add('alterar-status');
-                novaTarefa.appendChild(botaoStatus);
+/* Grid das semanas */
+.semanas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
 
-                // Evento de edição de tarefa
-                botaoEditar.addEventListener('click', () => {
-                    const novoTexto = prompt("Edite a tarefa:", tarefaTexto);
-                    if (novoTexto !== null && novoTexto.trim() !== "") {
-                        novaTarefa.firstChild.textContent = novoTexto;
-                    }
-                });
+/* Cartão de cada semana */
+.semana {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-                // Evento de alterar status
-                botaoStatus.addEventListener('click', () => {
-                    novaTarefa.classList.toggle('status-em-andamento');
-                    novaTarefa.classList.toggle('status-concluido');
-                });
+/* Título da semana */
+h2 {
+    font-size: 22px;
+    color: #000000;
+    margin-bottom: 10px;
+}
 
-                listaTarefas.appendChild(novaTarefa);
-                inputCampo.value = ''; // Limpa o campo de entrada
-                semana.querySelector('.input-tarefa').style.display = 'none'; // Esconde o campo de tarefa
-            }
-        });
-    });
+/* Data */
+.data {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 10px;
+}
 
-    // Função para alterar a data
-    const botoesAlterarData = document.querySelectorAll('.alterar-data');
-    botoesAlterarData.forEach(botao => {
-        botao.addEventListener('click', function () {
-            const semana = botao.closest('.semana');
-            const inputData = semana.querySelector('.data-semana');
-            inputData.style.display = 'block';  // Exibe o campo de data
-            inputData.focus();
+/* Botões */
 
-            inputData.addEventListener('blur', () => {
-                const novaData = inputData.value.trim();
-                if (novaData) {
-                    const spanData = semana.querySelector('.data span');
-                    spanData.textContent = novaData;  // Atualiza a data na semana
-                }
-                inputData.style.display = 'none'; // Esconde o campo de data
-            });
-        });
-    });
+.add-tarefa {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #007bff;
+    color: white;
+    padding: 2px 2px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 12px;
+    width: 55%;
+    display: inline-block;
 
-});
+}
+
+.alterar-data {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #cccccc;
+    border-radius: 5px;
+    color: #000000;
+    border-radius: 5px;
+}
+
+/* Lista de tarefas */
+.lista-tarefas {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.tarefa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    gap: 5px;
+}
+
+.descricao {
+    flex: 1;
+    font-size: 14px;
+    color: #000000;
+}
+
+.status {
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+}
+
+/* Status cores */
+.para-fazer {
+    background-color: #007bff;
+}
+
+.em-andamento {
+    background-color: #ffc107;
+}
+
+.concluido {
+    background-color: #28a745;
+}
+
+/* Botões editar/excluir */
+.tarefa button {
+    font-family: 'Roboto Mono', monospace;
+    padding: 3px 7px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Legenda */
+.legenda {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.legenda p {
+    font-family: 'Roboto Mono', monospace;
+    color: #000000;
+    margin: 5px 0;
+}
+
+.legenda .status {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border-radius: 4px;
+}
