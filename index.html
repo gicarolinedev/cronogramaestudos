@@ -1,201 +1,122 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!--Título e favcon-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cronograma de Estudos</title>
-        <link rel="stylesheet" href="style.css" />
-        <!--Background com animações-->
-        <div class="fundo-galaxia">
-        </head>
-        <body>
-            <!--Título-->
-            <h1>Cronograma de Estudos</h1>
-            <p class="subtitulo">Organize suas tarefas de forma simples e
-                prática!</p>
-            <!--Container das semanas-->
-            <div class="container">
-                <div class="semanas">
-                    <!-- Semana 1 -->
-                    <div class="semana">
-                        <!--Título das tabelas-->
-                        <h2>Semana 1</h2>
-                        <!--Data de ínicio e término das emanas-->
-                        <p class="data">Data: <span id="data-semana-1">01/05 -
-                                05/05</span></p>
-                        <!--Campo para alterar a data da semana-->
-                        <input type="text" id="input-data-semana-1"
-                            placeholder="Alterar data" class="data-semana"
-                            style="display: none;">
-                        <button class="alterar-data" data-semana="1">Alterar
-                            Data</button>
-                        <!--Botão para adicionar nova tarefa-->
-                        <button class="add-tarefa">+ Adicionar Tarefa</button>
-                        <!--Campo para adicionar nova tarefa (caixa que abre)-->
-                        <div class="input-tarefa" style="display: none;">
-                            <input type="text" id="nova-tarefa-1"
-                                placeholder="Digite a nova tarefa...">
-                            <button class="salvar-tarefa"
-                                data-semana="1">Salvar</button>
-                        </div>
-                        <!--Lista de tarefas-->
-                        <ul class="lista-tarefas">
-                            <li class="tarefa">
-                                <span class="descricao">Estudar HTML
-                                    básico</span>
-                                <!--Classificação da tarefa (status)-->
-                                <span class="status para-fazer"></span>
-                                <!--Botão de editar a tarefa-->
-                                <button class="editar">editar</button>
-                                <!--Botã de excluir a tarefa-->
-                                <button class="excluir">excluir</button>
-                            </li>
-                            <!--semana 1 - tarefa 2-->
-                            <li class="tarefa">
-                                <span class="descricao">Praticar Flexbox</span>
-                                <span class="status em-andamento"></span>
-                                <button class="editar">editar</button>
-                                <button class="excluir">excluir</button>
-                            </li>
-                            <!--semana 1 - tarefa 3-->
-                            <li class="tarefa">
-                                <span class="descricao">Finalizar projeto</span>
-                                <span class="status concluido"></span>
-                                <button class="editar">editar</button>
-                                <button class="excluir">excluir</button>
-                            </li>
-                        </ul>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="fundo-galaxia"></div>
+        <!--Título-->
+        <h1>Cronograma de Estudos</h1>
+        <div class="container">
+            <div class="semanas">
+                <!-- Semana 1 -->
+                <div class="semana">
+                    <h2>Semana 1</h2>
+                    <p class="data">
+                        Data:
+                        <span>01/05 - 07/05</span>
+                    </p>
+                    <input
+                        type="text"
+                        placeholder="Alterar data"
+                        class="data-semana"
+                        style="display: none;"
+                    >
+                    <button class="alterar-data">Alterar Data</button>
+                    <!--Botão de add tarefa-->
+                    <button class="add-tarefa">+ Adicionar Tarefa</button>
+                    <div class="input-tarefa" style="display: none;">
+                        <input type="text" placeholder="Digite a nova tarefa..." class="campo-tarefa">
+                        <button class="salvar-tarefa">Salvar</button>
                     </div>
-                    <!--Semana 2-->
-                    <div class="semana">
-                        <h2>Semana 2</h2>
-                        <p class="data">Data: <span id="data-semana-1">11/05 -
-                                15/05</span></p>
-                        <input type="text" id="input-data-semana-1"
-                            placeholder="Alterar data" class="data-semana"
-                            style="display: none;">
-                        <button class="alterar-data" data-semana="1">Alterar
-                            Data</button>
-                        <button class="add-tarefa">+ Adicionar Tarefa</button>
-                        <div class="input-tarefa" style="display: none;">
-                            <input type="text" id="nova-tarefa-1"
-                                placeholder="Digite a nova tarefa...">
-                            <button class="salvar-tarefa"
-                                data-semana="1">Salvar</button>
-                        </div>
-                        <ul class="lista-tarefas">
-                            <li class="tarefa">
-                                <span class="descricao">Estudar HTML
-                                    básico</span>
-                                <span class="status para-fazer"></span>
-                                <button class="editar">editar</button>
-                                <button class="excluir">excluir</button>
-                            </li>
-                            <li class="tarefa">
-                                <span class="descricao">Praticar Flexbox</span>
-                                <span class="status em-andamento"></span>
-                                <button class="editar">editar</button>
-                                <button class="excluir">excluir</button>
-                            </li>
-                            <li class="tarefa">
-                                <span class="descricao">Finalizar projeto</span>
-                                <span class="status concluido"></span>
-                                <button class="editar">editar</button>
-                                <button class="excluir">excluir</button>
-                            </li>
-                        </ul>
+                    <ul class="lista-tarefas"></ul>
+                </div>
+                <!-- Semana 2 -->
+                <div class="semana">
+                    <h2>Semana 2</h2>
+                    <p class="data">
+                        Data:
+                        <span>01/05 - 07/05</span>
+                    </p>
+                    <input
+                        type="text"
+                        placeholder="Alterar data"
+                        class="data-semana"
+                        style="display: none;"
+                    >
+                    <button class="alterar-data">Alterar Data</button>
+                    <button class="add-tarefa">+ Adicionar Tarefa</button>
+                    <div class="input-tarefa" style="display: none;">
+                        <input type="text" placeholder="Digite a nova tarefa..." class="campo-tarefa">
+                        <button class="salvar-tarefa">Salvar</button>
                     </div>
-                    <!--Semana 3-->
-
+                    <ul class="lista-tarefas">
+                    </div>
+                    <!-- Semana 3 -->
                     <div class="semana">
                         <h2>Semana 3</h2>
-                        <p class="data">Data: <span id="data-semana-1">16/05 -
-                                21/05</span></p>
-                        <input type="text" id="input-data-semana-1"
-                            placeholder="Alterar data" class="data-semana"
-                            style="display: none;">
-                        <button class="alterar-data" data-semana="1">Alterar
-                            Data</button>
+                        <p class="data">
+                            Data:
+                            <span>01/05 - 07/05</span>
+                        </p>
+                        <input
+                            type="text"
+                            placeholder="Alterar data"
+                            class="data-semana"
+                            style="display: none;"
+                        >
+                        <button class="alterar-data">Alterar Data</button>
                         <button class="add-tarefa">+ Adicionar Tarefa</button>
                         <div class="input-tarefa" style="display: none;">
-                            <input type="text" id="nova-tarefa-1"
-                                placeholder="Digite a nova tarefa...">
-                            <button class="salvar-tarefa"
-                                data-semana="1">Salvar</button>
+                            <input type="text" placeholder="Digite a nova tarefa..." class="campo-tarefa">
+                            <button class="salvar-tarefa">Salvar</button>
                         </div>
                         <ul class="lista-tarefas">
-                            <li class="tarefa">
-                                <span class="descricao">Estudar HTML
-                                    básico</span>
-                                <span class="status para-fazer"></span>
-                                <button class="editar">editar</button>
-                                <button class="excluir">excluir</button>
-                            </li>
-                            <li class="tarefa">
-                                <span class="descricao">Praticar Flexbox</span>
-                                <span class="status em-andamento"></span>
-                                <button class="editar">editar</button>
-                                <button class="excluir">excluir</button>
-                            </li>
-                            <li class="tarefa">
-                                <span class="descricao">Finalizar projeto</span>
-                                <span class="status concluido"></span>
-                                <button class="editar">editar</button>
-                                <button class="excluir">excluir</button>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--Semana 4-->
-
-                    <div class="semana">
-                        <h2>Semana 4</h2>
-                        <p class="data">Data: <span id="data-semana-1">22/05 -
-                                27/05</span></p>
-                        <input type="text" id="input-data-semana-1"
-                            placeholder="Alterar data" class="data-semana"
-                            style="display: none;">
-                        <button class="alterar-data" data-semana="1">Alterar
-                            Data</button>
-                        <button class="add-tarefa">+ Adicionar Tarefa</button>
-                        <div class="input-tarefa" style="display: none;">
-                            <input type="text" id="nova-tarefa-1"
-                                placeholder="Digite a nova tarefa...">
-                            <button class="salvar-tarefa"
-                                data-semana="1">Salvar</button>
                         </div>
-                        <ul class="lista-tarefas">
-                            <li class="tarefa">
-                                <span class="descricao">Estudar HTML
-                                    básico</span>
-                                <span class="status para-fazer"></span>
-                                <button class="editar">editar</button>
-                                <button class="excluir">excluir</button>
-                            </li>
-                            <li class="tarefa">
-                                <span class="descricao">Praticar Flexbox</span>
-                                <span class="status em-andamento"></span>
-                                <button class="editar">editar</button>
-                                <button class="excluir">excluir</button>
-                            </li>
-                            <li class="tarefa">
-                                <span class="descricao">Finalizar projeto</span>
-                                <span class="status concluido"></span>
-                                <button class="editar">editar</button>
-                                <button class="excluir">excluir</button>
-                            </li>
-                        </ul>
-                    </div> </div>
-            </div>
-
-            <!-- Legenda das cores das tarefas-->
-            <div class="legenda">
-                <p><span class="status para-fazer"></span> Para Fazer</p>
-                <p><span class="status em-andamento"></span> Em Andamento</p>
-                <p><span class="status concluido"></span> Concluído</p>
-            </div>
-        </div>
-
-        <script src="script.js"></script>
-    </body>
-</html>
+                        <!-- Semana 4 -->
+                        <div class="semana">
+                            <h2>Semana 4</h2>
+                            <!-- Data da semana (editável)-->
+                            <p class="data">
+                                Data:
+                                <span>01/05 - 07/05</span>
+                            </p>
+                            <input
+                                type="text"
+                                placeholder="Alterar data"
+                                class="data-semana"
+                                style="display: none;"
+                            >
+                            <button class="alterar-data">Alterar Data</button>
+                            <!--Botão de add tarefa-->
+                            <button class="add-tarefa">+ Adicionar Tarefa</button>
+                            <div class="input-tarefa" style="display: none;">
+                                <input type="text" placeholder="Digite a nova tarefa..." class="campo-tarefa">
+                                <!--Classificação da tarefa (status)-->
+                                <span class="status para-fazer">
+                                    <button class="salvar-tarefa">Salvar</button>
+                                </div>
+                            </span>
+                            <ul class="lista-tarefas">
+                            </div>
+                            <!--STATUS DA TAREFA-->
+                            <div class="legenda">
+                                <p>
+                                    <span class="status para-fazer"></span>
+                                    Para Fazer
+                                </p>
+                                <p>
+                                    <span class="status em-andamento"></span>
+                                    Em Andamento
+                                </p>
+                                <p>
+                                    <span class="status concluido"></span>
+                                    Concluído
+                                </p>
+                            </div>
+                            <script src="script.js"></script>
+                        </body>
+                    </html>
